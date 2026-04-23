@@ -16,7 +16,6 @@
 
     --link: #6da5d8;
     --link-hover: #9ec6ef;
-    --link-visited: #a89670;
 
     --stable: #3ca86a;
     --beta: #cda038;
@@ -224,10 +223,6 @@ main {
     color: var(--link);
     text-decoration: none;
     transition: color 0.2s;
-}
-
-.tier-list a:visited {
-    color: var(--link-visited);
 }
 
 .tier-list a:hover {
