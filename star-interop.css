@@ -1,27 +1,25 @@
-/* Star-Interop — Technical Tome */
+/* Star-Interop — Neutral Light */
 
 :root {
-    --bg: #090c14;
-    --bg-glow: #111728;
-    --surface: #0e1119;
-    --surface-hover: #131722;
-    --border: #1a1e2e;
-    --border-hover: #252a3e;
+    --bg: #fafaf6;
+    --surface: #ffffff;
+    --surface-hover: #fafaf7;
+    --border: #dcd9d2;
+    --border-hover: #b8b5ad;
+    --border-row: #ece9e2;
 
-    --text: #a5a8b4;
-    --text-bright: #dce0ea;
-    --text-muted: #4e5264;
-    --gold: #c9a84c;
-    --gold-dim: rgba(201, 168, 76, 0.35);
+    --text: #111111;
+    --text-bright: #000000;
+    --text-muted: #555555;
 
-    --link: #6da5d8;
-    --link-hover: #9ec6ef;
+    --link: #111111;
+    --link-hover: #000000;
 
-    --stable: #3ca86a;
-    --beta: #cda038;
-    --alpha: #c47440;
-    --dev: #60637a;
-    --prerelease: #8868b4;
+    --stable: #15803d;
+    --beta: #a16207;
+    --alpha: #9a3412;
+    --dev: #4b5563;
+    --prerelease: #6b21a8;
 
     --font: 'Bricolage Grotesque', -apple-system, sans-serif;
     --font-serif: 'Instrument Serif', Georgia, serif;
@@ -48,8 +46,6 @@ html {
 
 body {
     background: var(--bg);
-    background-image: radial-gradient(ellipse 80% 50% at 50% -10%, var(--bg-glow), var(--bg) 100%);
-    background-attachment: fixed;
     color: var(--text);
     font-family: var(--font);
     font-weight: 400;
@@ -57,36 +53,6 @@ body {
     min-height: 100vh;
     padding: 5rem 1.5rem 2.5rem;
     position: relative;
-}
-
-/* Star field */
-
-body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    background-image:
-        radial-gradient(1px 1px at 47px 83px, rgba(255,255,255,0.14), transparent),
-        radial-gradient(1px 1px at 12px 129px, rgba(255,255,255,0.08), transparent),
-        radial-gradient(1.2px 1.2px at 191px 14px, rgba(255,255,255,0.17), transparent),
-        radial-gradient(1px 1px at 73px 162px, rgba(255,255,255,0.06), transparent),
-        radial-gradient(1px 1px at 238px 107px, rgba(255,255,255,0.11), transparent),
-        radial-gradient(1.3px 1.3px at 144px 58px, rgba(255,255,255,0.13), transparent),
-        radial-gradient(1px 1px at 301px 192px, rgba(255,255,255,0.07), transparent),
-        radial-gradient(1px 1px at 88px 241px, rgba(255,255,255,0.10), transparent),
-        radial-gradient(1.1px 1.1px at 265px 143px, rgba(255,255,255,0.09), transparent);
-    background-size:
-        271px 199px,
-        197px 263px,
-        313px 227px,
-        251px 281px,
-        283px 211px,
-        239px 307px,
-        337px 179px,
-        191px 317px,
-        293px 241px;
 }
 
 main {
@@ -108,7 +74,6 @@ main {
     max-width: 240px;
     height: auto;
     margin: 0 auto 1.125rem;
-    filter: invert(1);
     animation: heroIn 0.7s ease-out both;
 }
 
@@ -135,8 +100,7 @@ main {
     border-left: 2px solid var(--accent, var(--border));
     border-radius: var(--radius);
     padding: 1rem 1.25rem;
-    transition: border-color 0.25s, background-color 0.25s, box-shadow 0.3s;
-    box-shadow: inset 3px 0 12px -8px var(--accent, transparent);
+    transition: border-color 0.25s, background-color 0.25s;
     animation: tierIn 0.5s ease-out both;
     animation-delay: calc(0.2s + var(--i, 0) * 0.08s);
 }
@@ -145,7 +109,6 @@ main {
     border-color: var(--border-hover);
     border-left-color: var(--accent, var(--border-hover));
     background: var(--surface-hover);
-    box-shadow: inset 4px 0 16px -6px var(--accent, transparent);
 }
 
 .tier-header {
@@ -168,38 +131,15 @@ main {
     padding: 0.175em 0.7em;
     border-radius: 999px;
     line-height: 1.6;
-    border: 1px solid;
+    background: transparent;
+    border: 1px solid currentColor;
 }
 
-.badge-stable {
-    color: var(--stable);
-    background: rgba(60, 168, 106, 0.07);
-    border-color: rgba(60, 168, 106, 0.18);
-}
-
-.badge-beta {
-    color: var(--beta);
-    background: rgba(205, 160, 56, 0.07);
-    border-color: rgba(205, 160, 56, 0.18);
-}
-
-.badge-alpha {
-    color: var(--alpha);
-    background: rgba(196, 116, 64, 0.07);
-    border-color: rgba(196, 116, 64, 0.18);
-}
-
-.badge-dev {
-    color: var(--dev);
-    background: rgba(96, 99, 122, 0.07);
-    border-color: rgba(96, 99, 122, 0.18);
-}
-
-.badge-prerelease {
-    color: var(--prerelease);
-    background: rgba(136, 104, 180, 0.07);
-    border-color: rgba(136, 104, 180, 0.18);
-}
+.badge-stable     { color: var(--stable); }
+.badge-beta       { color: var(--beta); }
+.badge-alpha      { color: var(--alpha); }
+.badge-dev        { color: var(--dev); }
+.badge-prerelease { color: var(--prerelease); }
 
 /* ---- Tier List ---- */
 
@@ -216,20 +156,20 @@ main {
 }
 
 .tier-list li + li {
-    border-top: 1px solid rgba(255, 255, 255, 0.025);
+    border-top: 1px solid var(--border-row);
 }
 
 .tier-list a {
     color: var(--link);
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
     transition: color 0.2s;
 }
 
 .tier-list a:hover {
     color: var(--link-hover);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    text-decoration-thickness: 1px;
+    text-decoration-thickness: 2px;
 }
 
 .tier-list code {
@@ -253,11 +193,11 @@ main {
     content: '';
     flex: 1;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.25), transparent);
 }
 
 .divider-star {
-    color: var(--gold);
+    color: var(--text-muted);
     font-size: 0.9375rem;
     line-height: 1;
     animation: starPulse 5s ease-in-out infinite;
@@ -320,7 +260,7 @@ footer a:hover {
 }
 
 .star-mark {
-    color: var(--gold);
+    color: var(--text-muted);
     font-family: sans-serif;
     font-size: 0.625rem;
     vertical-align: 1px;
@@ -374,8 +314,8 @@ footer a:hover {
 }
 
 @keyframes starPulse {
-    0%, 100% { opacity: 0.45; }
-    50% { opacity: 0.9; }
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
 }
 
 /* ---- Responsive ---- */
